@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,31 +11,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Brief & Logo */}
           <div className="space-y-6">
-            <Link href="/" className="flex items-center gap-2.5">
-              <div className="w-10 h-10 rounded-lg bg-sky-500 flex items-center justify-center text-white font-bold text-lg">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2.5}
-                  stroke="currentColor"
-                  className="w-5.5 h-5.5"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M20.893 13.393l-1.135-1.135a9.052 9.052 0 00-3.096-2.128 9.02 9.02 0 00-4.322 0 9.05 9.05 0 00-3.097 2.128L8.11 13.4M2.25 12a9.75 9.75 0 1119.5 0 9.75 9.75 0 01-19.5 0z"
-                  />
-                </svg>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-lg font-black tracking-tight text-white leading-none">
-                  QUATTRO
-                </span>
-                <span className="text-[10px] font-bold text-sky-400 tracking-wider uppercase mt-1">
-                  INDUSTRIES
-                </span>
-              </div>
+            <Link href="/" className="flex items-center group">
+              <Image
+                src="/logo.png"
+                alt="Quattro Industries"
+                width={175}
+                height={60}
+                className="h-12 w-auto object-contain mix-blend-screen"
+                style={{ filter: "invert(1) brightness(10)" }}
+              />
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed">
               Authorized distributors of 100% genuine and certified Reverse Osmosis membranes, AWC antiscalants, and CLACK water filtration media products made in USA.

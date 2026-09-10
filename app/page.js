@@ -71,12 +71,11 @@ export default function Home() {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
-              index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
-            }`}
+            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
+              }`}
           >
             {/* Background Image with elegant overlay */}
-            <div className="absolute inset-0 bg-slate-950/65 z-10" />
+            <div className="absolute inset-0 bg-slate-950/40 z-10" />
             <img
               src={slide.image}
               alt={slide.title}
@@ -119,9 +118,8 @@ export default function Home() {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-2.5 h-2.5 rounded-full transition-all ${
-                index === currentSlide ? "bg-white w-6" : "bg-white/40"
-              }`}
+              className={`w-2.5 h-2.5 rounded-full transition-all ${index === currentSlide ? "bg-white w-6" : "bg-white/40"
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}

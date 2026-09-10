@@ -108,12 +108,13 @@ export default function Contact() {
                         </svg>
                         <div className="space-y-0.5">
                           {office.phones.map((phone, i) => (
-                            <span
+                            <a
                               key={i}
-                              className="block font-medium text-slate-800"
+                              href={`tel:${phone.replace(/[^+\d]/g, "")}`}
+                              className="block font-medium text-slate-800 hover:text-sky-600 transition-colors"
                             >
                               {phone}
-                            </span>
+                            </a>
                           ))}
                         </div>
                       </div>

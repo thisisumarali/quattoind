@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { submitInquiry } from "@/app/actions";
+import { trackLeadConversion } from "@/lib/gtag";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -41,6 +42,13 @@ export default function ContactForm() {
       const res = await submitInquiry(data);
 
       if (res.success) {
+        // Track conversion in Google Ads / Analytics
+        trackLeadConversion({
+          formName: "contact_inquiry",
+          email: formData.email,
+          phone: formData.phone,
+        });
+
         setStatus({ submitting: false, submitted: true, error: null });
         setFormData({ name: "", email: "", phone: "", company: "", message: "" });
       } else {

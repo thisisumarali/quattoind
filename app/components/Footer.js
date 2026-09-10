@@ -88,11 +88,11 @@ export default function Footer() {
                     +92-301-2554453
                   </a>
                   <a
-                    href="tel:+923308222278"
-                    onClick={() => trackPhoneCall("+92-330-8222278")}
+                    href="tel:+923308222274"
+                    onClick={() => trackPhoneCall("+92-330-8222274")}
                     className="block hover:text-sky-400 transition-colors"
                   >
-                    +92-330-8222278
+                    +92-330-8222274
                   </a>
                   <a
                     href="tel:+922135850003"

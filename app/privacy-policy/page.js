@@ -143,7 +143,7 @@ export default function PrivacyPolicy() {
               <p>Plot # 66-C, Office #501, Al-Murtaza Commercial Lane 2, Phase VIII, Karachi, Pakistan</p>
               <p>USA Office: 27611 wishing Oak Landing, Spring, TX 77386</p>
               <p>Email: <a href="mailto:info@quattroind.com" className="text-sky-600 hover:underline">info@quattroind.com</a></p>
-              <p>Phone: +92-301-2554453 / +92 (21) 35850003</p>
+              <p>Phone: +92-301-2554453 / +92-330-8222274 / +92 (21) 35850003</p>
             </div>
           </div>
 

@@ -89,8 +89,7 @@ export default function TermsOfService() {
             <div className="bg-slate-50 border border-slate-200/70 rounded-xl p-5 space-y-2 text-sm">
               <p className="font-bold text-slate-900">Quattro Industries</p>
               <p>Email: <a href="mailto:info@quattroind.com" className="text-sky-600 hover:underline">info@quattroind.com</a></p>
-              <p>Karachi Office: +92-301-2554453 / +92 (21) 35850003</p>
-              <p>USA Office: +1-512-328-0704</p>
+              <p>Karachi Office: +92-301-2554453 / +92-330-8222274 / +92 (21) 35850003</p>
             </div>
           </div>
 

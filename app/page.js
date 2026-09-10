@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ContactForm from "./components/ContactForm";
+import { trackPhoneCall } from "@/lib/gtag";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -378,11 +379,29 @@ export default function Home() {
                     <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wide">
                       Customer Support Phone
                     </h4>
-                    <p className="text-sm font-bold text-slate-900 gap-2 flex-col">
-                      <span>+92-301-2554453</span> <br />
-                      <span> +92-330-8222278 </span> <br />
-                      <span>+92 (21) 35850003</span> <br />
-                    </p>
+                    <div className="text-sm font-bold text-slate-900 flex flex-col gap-1">
+                      <a
+                        href="tel:+923012554453"
+                        onClick={() => trackPhoneCall("+92-301-2554453")}
+                        className="hover:text-sky-600 transition-colors"
+                      >
+                        +92-301-2554453
+                      </a>
+                      <a
+                        href="tel:+923308222274"
+                        onClick={() => trackPhoneCall("+92-330-8222274")}
+                        className="hover:text-sky-600 transition-colors"
+                      >
+                        +92-330-8222274
+                      </a>
+                      <a
+                        href="tel:+922135850003"
+                        onClick={() => trackPhoneCall("+92 (21) 35850003")}
+                        className="hover:text-sky-600 transition-colors"
+                      >
+                        +92 (21) 35850003
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

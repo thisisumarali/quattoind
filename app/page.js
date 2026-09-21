@@ -75,7 +75,7 @@ export default function Home() {
               }`}
           >
             {/* Background Image with elegant overlay */}
-            <div className="absolute inset-0 bg-slate-950/40 z-10" />
+            <div className="absolute inset-0 bg-slate-950/30 z-10" />
             <img
               src={slide.image}
               alt={slide.title}

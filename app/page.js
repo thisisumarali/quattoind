@@ -42,25 +42,25 @@ export default function Home() {
       title: "Filmtec Membranes",
       desc: "Industry-standard brackish and seawater membranes by DuPont/Filmtec.",
       image: "/filmtech-membranes.jpeg",
-      href: "/products#filmtec-membranes",
+      href: "/index.php/our-products#filmtec-membranes",
     },
     {
       title: "Toray Membranes",
       desc: "Exceptional seawater and low-energy brackish water elements from Toray.",
       image: "/toray.jpeg",
-      href: "/products#toray-membranes",
+      href: "/index.php/our-products#toray-membranes",
     },
     {
       title: "AWC Chemicals",
       desc: "Award-winning RO antiscalants and premium membrane cleaners.",
       image: "/awc-chemicals.jpeg",
-      href: "/products#awc-chemicals",
+      href: "/index.php/our-products#awc-chemicals",
     },
     {
       title: "Filter Media Products",
       desc: "Clack Birm, Activated Carbon, Anthracite, and Filter-Ag media.",
       image: "/carbon-clack.jpeg",
-      href: "/products#filter-media-products",
+      href: "/index.php/our-products#filter-media-products",
     },
   ];
 
@@ -95,7 +95,7 @@ export default function Home() {
                 </p>
                 <div className="pt-4 flex flex-wrap gap-4">
                   <Link
-                    href="/products"
+                    href="/index.php/our-products"
                     className="px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-slate-900 hover:bg-sky-500 hover:text-white transition-all shadow-md"
                   >
                     View Catalog

@@ -1,9 +1,64 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+const hashToCategoryMap = {
+  "awc-chemicals": "awc",
+  "awc": "awc",
+  "chemicals": "awc",
+  "filter-media-products": "media",
+  "filter-media": "media",
+  "clack-media": "media",
+  "media": "media",
+  "filmtec": "filmtec",
+  "filmtec-membranes": "filmtec",
+  "dupont-filmtec": "filmtec",
+  "dupont": "filmtec",
+  "toray": "toray",
+  "toray-membranes": "toray",
+};
+
+const categoryToHashMap = {
+  filmtec: "filmtec-membranes",
+  toray: "toray-membranes",
+  awc: "awc-chemicals",
+  media: "filter-media-products",
+};
 
 export default function ProductCatalog({ initialProducts, categories = [] }) {
   const [activeTab, setActiveTab] = useState("all");
+
+  useEffect(() => {
+    const handleHash = () => {
+      const rawHash = window.location.hash.toLowerCase().replace("#", "");
+      if (!rawHash) return;
+
+      const targetSlug = hashToCategoryMap[rawHash];
+      if (targetSlug) {
+        setActiveTab(targetSlug);
+        setTimeout(() => {
+          const el = document.getElementById(rawHash) || document.getElementById("catalog-products");
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 150);
+      }
+    };
+
+    handleHash();
+    window.addEventListener("hashchange", handleHash);
+    return () => window.removeEventListener("hashchange", handleHash);
+  }, []);
+
+  const handleTabClick = (slug) => {
+    setActiveTab(slug);
+    const hash = categoryToHashMap[slug];
+    if (hash) {
+      window.history.replaceState(null, "", `#${hash}`);
+    } else {
+      window.history.replaceState(null, "", window.location.pathname);
+    }
+  };
 
   const allCategories = [
     { name: "All Products", slug: "all" },
@@ -17,6 +72,22 @@ export default function ProductCatalog({ initialProducts, categories = [] }) {
 
   return (
     <div className="w-full bg-white flex flex-col min-h-[60vh]">
+      {/* Anchor targets for direct linking and Google Ads landing */}
+      <div id="catalog-products" className="scroll-mt-40">
+        <div id="awc-chemicals" className="scroll-mt-40" />
+        <div id="awc" className="scroll-mt-40" />
+        <div id="chemicals" className="scroll-mt-40" />
+        <div id="filter-media-products" className="scroll-mt-40" />
+        <div id="filter-media" className="scroll-mt-40" />
+        <div id="clack-media" className="scroll-mt-40" />
+        <div id="media" className="scroll-mt-40" />
+        <div id="filmtec" className="scroll-mt-40" />
+        <div id="filmtec-membranes" className="scroll-mt-40" />
+        <div id="dupont-filmtec" className="scroll-mt-40" />
+        <div id="toray" className="scroll-mt-40" />
+        <div id="toray-membranes" className="scroll-mt-40" />
+      </div>
+
       {/* Page Header */}
       <section className="bg-slate-50 border-b border-slate-100 py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
@@ -35,7 +106,7 @@ export default function ProductCatalog({ initialProducts, categories = [] }) {
             {allCategories.map((category) => (
               <button
                 key={category.slug}
-                onClick={() => setActiveTab(category.slug)}
+                onClick={() => handleTabClick(category.slug)}
                 className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer ${
                   activeTab === category.slug
                     ? "bg-sky-600 text-white shadow-sm"

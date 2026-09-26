@@ -54,7 +54,7 @@ export default function Footer() {
                 <Link href="/about" className="hover:text-sky-400 transition-colors">About Us</Link>
               </li>
               <li>
-                <Link href="/products" className="hover:text-sky-400 transition-colors">Our Products</Link>
+                <Link href="/index.php/our-products" className="hover:text-sky-400 transition-colors">Our Products</Link>
               </li>
               <li>
                 <Link href="/contact" className="hover:text-sky-400 transition-colors">Contact Us</Link>

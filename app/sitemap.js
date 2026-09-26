@@ -10,7 +10,7 @@ export default function sitemap() {
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/products`,
+      url: `${baseUrl}/index.php/our-products`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.9,

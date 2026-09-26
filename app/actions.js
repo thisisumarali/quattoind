@@ -117,7 +117,7 @@ export async function createProduct(formData) {
       },
     });
 
-    revalidatePath("/products");
+    revalidatePath("/index.php/our-products");
     return { success: true };
   } catch (error) {
     console.error("Failed to create product:", error);
@@ -177,7 +177,7 @@ export async function updateProduct(id, formData) {
       },
     });
 
-    revalidatePath("/products");
+    revalidatePath("/index.php/our-products");
     return { success: true };
   } catch (error) {
     console.error("Failed to update product:", error);
@@ -197,7 +197,7 @@ export async function deleteProduct(id) {
       where: { id: Number(id) },
     });
 
-    revalidatePath("/products");
+    revalidatePath("/index.php/our-products");
     return { success: true };
   } catch (error) {
     console.error("Failed to delete product:", error);
@@ -267,7 +267,7 @@ export async function createCategory(name) {
       },
     });
 
-    revalidatePath("/products");
+    revalidatePath("/index.php/our-products");
     revalidatePath("/admin/products");
     return { success: true };
   } catch (error) {
@@ -291,7 +291,7 @@ export async function deleteCategory(id) {
       where: { id: Number(id) },
     });
 
-    revalidatePath("/products");
+    revalidatePath("/index.php/our-products");
     revalidatePath("/admin/products");
     return { success: true };
   } catch (error) {
